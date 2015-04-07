@@ -1,5 +1,7 @@
 package edu.luc.cs.spring2015.comp473;
 
+import java.util.List;
+
 public interface Subject<StateType> {
 
 	void attach(Observer observer);
@@ -11,5 +13,7 @@ public interface Subject<StateType> {
 	StateType getState();
 	
 	void setState(StateType state);
+	
+	List<Observer> getObservers();
 	
 }

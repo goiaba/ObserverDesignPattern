@@ -27,7 +27,7 @@ public class TrailingStop implements Observer {
 			System.out.println("The asset price dropped more than permitted by the loss limit: Selling it.");
 			assetQuote.detach(this);
 		} else {
-			System.out.println("The asset price dropped but it is still above the loss limit.");
+			System.out.println("The asset price do not changed or dropped but it is still above the loss limit.");
 		}
 		setQuote(currentQuote);
 	}

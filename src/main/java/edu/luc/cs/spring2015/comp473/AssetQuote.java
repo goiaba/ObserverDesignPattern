@@ -40,6 +40,7 @@ public class AssetQuote implements Subject<Float> {
 		notifyObserver();
 	}
 	
+	@Override
 	public List<Observer> getObservers() {
 		return observers;
 	}
