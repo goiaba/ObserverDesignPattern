@@ -23,13 +23,13 @@ public class TrailingStop implements Observer {
 		System.out.print("\t");
 		if (currentQuote > getQuote()) {
 			System.out.println("Great, the asset price is rising.");
+			setQuote(currentQuote);
 		} else if (currentQuote < getQuote() * (1 - getLossPercentage())) {
 			System.out.println("The asset price dropped more than permitted by the loss limit: Selling it.");
 			assetQuote.detach(this);
 		} else {
 			System.out.println("The asset price do not changed or dropped but it is still above the loss limit.");
 		}
-		setQuote(currentQuote);
 	}
 
 	public Subject<Float> getAssetQuote() {
